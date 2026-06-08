@@ -1,21 +1,23 @@
 # AICE Wrap · Interactive ML Playground
 
-An interactive, browser-based teaching tool for **CMKL AICE Wrap** — a 6-session introduction to AI and Machine Learning for high school students. Every concept is a hands-on demo students can click, drag, and tweak. No install, no internet, no build step.
+An interactive, browser-based course for **CMKL University · AICE Wrap** — six modules introducing AI and Machine Learning for high school students. Every concept is a hands-on demo students can click, drag, and watch learn in real time. No install, no internet, no build step.
 
 🔗 **Live:** _add your Vercel link here_
 
-## The 6 sessions
+## The course
 
-| # | Session | Interactive demo |
-|---|---------|------------------|
-| 1 | **Intro to AI** | Rules-vs-learning flow · clickable AI → ML → DL nested rings · drag-and-drop game sorting examples into Supervised / Unsupervised / Reinforcement |
-| 2 | **Classification (KNN)** | Drop red/blue points, place a ★ mystery point, slide **k** and watch the neighbor vote flip |
-| 3 | **Regression** | Click & drag data points and watch the best-fit line chase them · live equation, error (MSE), and prediction |
-| 4 | **Clustering (K-Means)** | Step through the *assign → update* loop, or auto-run and watch centroids converge |
-| 5 | **Trees & Forests** | Decision boundaries for one tree vs. a forest (depth & tree-count sliders) · grid-search hyperparameter heatmap |
-| 6 | **Neural Networks** | A live single neuron with weight sliders · a network that **trains in front of the class** (backprop in JS) on easy / circle / XOR patterns |
+A landing **Home** page plus **6 modules**, each with multiple lessons (sub-tabs) that build intuition → hands-on → real-world. **16+ interactive demos** in total.
 
-Each session has a green **🎯 Try this** prompt suggesting a concrete experiment.
+| # | Module | Lessons (each its own interactive demo) |
+|---|--------|------------------------------------------|
+| 1 | **Intro to AI** | What is AI? (rules-vs-learning + nested AI⊃ML⊃DL rings) · How machines learn (3 families + sorting game) · The ML workflow (5-step pipeline walkthrough) |
+| 2 | **Classification · KNN** | The big idea (drag-to-explore distance demo) · KNN Playground (build data, vote) · Choosing k (live decision-boundary map) |
+| 3 | **Regression** | Best-fit line (drag points) · Why *this* line? (cost meter you minimise by hand) · Gradient descent (watch the line learn, with a live cost curve) |
+| 4 | **Clustering · K-Means** | Step-through playground · How many clusters? (elbow method) · Real-world customer segments |
+| 5 | **Trees & Forests** | Decision tree as a growing diagram · One tree vs. a forest (boundary smoothing) · Grid-search heatmap |
+| 6 | **Neural Networks** | One neuron (weight sliders) · Activation functions explorer · A network that trains itself (+ loss curve) |
+
+Most lessons include a green **🎯 Try this** challenge. Pedagogy throughout: plain-language hook → play with it → why it matters.
 
 ## Run it locally
 
@@ -41,16 +43,16 @@ This is a static site with **no framework and no build step**:
 
 ```
 .
-├── index.html            # all 6 sessions + sidebar nav
+├── index.html            # Home + 6 modules, sidebar + sub-tab nav
 ├── css/styles.css        # single stylesheet
 └── js/
-    ├── app.js            # sidebar navigation
-    ├── session1.js       # Intro to AI
-    ├── session2_knn.js   # KNN classification
-    ├── session3_reg.js   # Linear regression
-    ├── session4_kmeans.js# K-Means clustering
-    ├── session5_trees.js # Decision trees, random forest, grid search
-    └── session6_nn.js    # Single neuron + trainable network
+    ├── core.js           # navigation, shared canvas helpers, hero animation
+    ├── topic1.js         # Intro to AI (flow, rings, sorting game, ML pipeline)
+    ├── topic2.js         # KNN (distance, playground, decision boundary)
+    ├── topic3.js         # Regression (best-fit, cost, gradient descent)
+    ├── topic4.js         # K-Means (playground, elbow method, segments)
+    ├── topic5.js         # Trees (tree diagram, forest, grid search)
+    └── topic6.js         # Neural nets (neuron, activations, training + loss)
 ```
 
 ## Notes for teaching
