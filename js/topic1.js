@@ -50,13 +50,15 @@
   function build() {
     game.innerHTML = '<div class="examples" id="exRow"></div><div class="buckets">' +
       buckets.map(b => `<div class="bucket" data-b="${b}"><h4>${b}</h4><small class="muted">${hint[b]}</small><div class="got"></div></div>`).join('') +
-      '</div><div class="readout" id="sortMsg">Click an example, then click the family it belongs to. (8 to go.)</div>';
+      '</div><div class="readout" id="sortMsg">Click an example, then click the family it belongs to. (8 to go.)</div>' +
+      '<button class="seg" id="sortReset" style="margin-top:12px">↺ Play again</button>';
     const exRow = document.getElementById('exRow');
     data.forEach((d, i) => {
       const c = document.createElement('div'); c.className = 'chip'; c.textContent = d.t; c.dataset.i = i;
       c.addEventListener('click', () => selectChip(c)); exRow.appendChild(c);
     });
     document.querySelectorAll('#t1 .bucket').forEach(bk => bk.addEventListener('click', () => drop(bk)));
+    document.getElementById('sortReset').addEventListener('click', () => { placed = 0; selected = null; build(); });
   }
   function selectChip(c) {
     if (c.classList.contains('done')) return;
