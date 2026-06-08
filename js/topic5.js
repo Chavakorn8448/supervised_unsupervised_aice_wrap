@@ -24,8 +24,22 @@
     const NAME = { x: 'colour', y: 'size' };
     let data = [];
     function gen() {
+      // clean, rule-based fruit: lemon (🍋) = more yellow than it is big (below the colour=size diagonal),
+      // apple (🍎) otherwise. A small margin keeps the boundary crisp (no noisy coin-flips).
       data = [];
-      for (let i = 0; i < 120; i++) { const x = Math.random(), y = Math.random(); const c = (x > .55 && y < .5) ? 1 : (x < .35 ? 0 : (y > .65 ? 0 : (Math.random() < .5 ? 1 : 0))); data.push({ x, y, c }); }
+      while (data.length < 130) {
+        const x = Math.random(), y = Math.random();
+        if (Math.abs(y - x) < 0.05) continue;     // skip points right on the boundary
+        data.push({ x, y, c: y < x ? 1 : 0 });
+      }
+    }
+    // collapse any split whose two branches give the same answer — keep only meaningful questions
+    function prune(node) {
+      if (node.f === undefined) return node;
+      node.L = prune(node.L); node.R = prune(node.R);
+      if (node.L.f === undefined && node.R.f === undefined && node.L.pred === node.R.pred)
+        return { pred: node.pred, n: node.n, p1: node.p1 };
+      return node;
     }
     function layoutLeaves(node, depth, box) {
       // assign x by in-order leaf slot; returns count of leaves
@@ -52,7 +66,7 @@
     }
     function draw() {
       const depth = +document.getElementById('tdDepth').value;
-      const tree = buildTree(data, depth, false);
+      const tree = prune(buildTree(data, depth, false));
       const leaves = countLeaves(tree), md = maxDepth(tree);
       const box = { next: 0 }; layoutLeaves(tree, 0, box);
       ctx.clearRect(0, 0, W, H);
