@@ -88,7 +88,7 @@
     { i: '🧠', t: 'Train', h: 'Learn the pattern',
       body: 'The model studies the 80%, adjusting itself until it reliably tells cats from dogs. This "studying" is the actual <b>learning</b> — exactly what Modules 2–6 show in action.' },
     { i: '📊', t: 'Evaluate', h: 'Grade it honestly',
-      body: 'Now we reveal the hidden 20%. The model has never seen them. It scores <b>92% correct</b> — that\'s our honest estimate of how it\'ll do in the real world.' },
+      body: 'Now we reveal the hidden 20%. The model has never seen them. It scores <b>92% correct</b> — that\'s our honest estimate of how it\'ll do in the real world.<br><span class="muted" style="font-size:13px">↪ Pros often hold back a third "<b>validation</b>" slice too — used for <i>choosing</i> the best settings without peeking at the test set. You\'ll meet it in Module 5.</span>' },
     { i: '🚀', t: 'Predict', h: 'Use it',
       body: 'Happy with 92%? Deploy it. Now show it a <b>brand-new</b> photo and it instantly predicts 🐱 or 🐶. The model is doing useful work.' }
   ];

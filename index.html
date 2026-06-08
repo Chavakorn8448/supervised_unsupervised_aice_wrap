@@ -435,6 +435,7 @@
         <p>Models have knobs (<em>hyperparameters</em>) like depth and number of trees. Grid search simply <b>tries every combination</b>, scores each, and keeps the winner. Hover a cell to inspect that model; 🏆 is the best.</p>
         <div id="gridSearch"></div>
         <p class="muted">It's brute force — but reliable, and easy to run on many computers at once. This is how real ML teams squeeze out the last few percent of accuracy.</p>
+        <p class="tryit" style="background:rgba(108,140,255,.1);border-color:rgba(108,140,255,.4);color:#cdd4ff"><b style="color:var(--acc2)">↪ Remember the validation set?</b> We score each model on a held-out <b>validation</b> slice — <em>not</em> the final test set. If we picked the winner using the test set, we'd be peeking at the answers and cheating all over again. The test set is only opened <em>once</em>, at the very end.</p>
       </div>
     </div>
   </section>
