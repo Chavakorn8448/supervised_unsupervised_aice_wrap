@@ -190,6 +190,13 @@ canvas{background:#0c1030;border:1px solid var(--line);border-radius:14px;max-wi
 .tryit{background:rgba(70,224,138,.1);border:1px solid rgba(70,224,138,.4);border-radius:10px;padding:11px 14px;margin:14px 0 0;font-size:13.5px;color:#bfeedd;line-height:1.55}
 .tryit b{color:var(--green)}
 
+/* "when would you use this?" card */
+.whenbox{background:linear-gradient(180deg,rgba(108,140,255,.1),rgba(20,24,47,.35));border:1px solid var(--acc);border-radius:16px;padding:18px 20px;margin:16px 0;box-shadow:var(--shadow)}
+.whenbox .wb-title{color:var(--acc2);text-transform:none;letter-spacing:0;font-size:16px;margin:0 0 12px}
+.wb-row{display:flex;gap:12px;align-items:flex-start;margin:9px 0;font-size:14px;line-height:1.55;color:#d6dbff}
+.wb-ic{font-size:17px;flex:0 0 auto;width:22px;text-align:center}
+.wb-row b{color:#fff}
+
 .foot{text-align:center;color:var(--muted);font-size:12.5px;padding:24px;border-top:1px solid var(--line);line-height:1.6}
 .foot b{color:var(--ink)}
 
