@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AICE Wrap · Interactive ML Playground</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">◈</span>
+    <div>
+      <div class="brand-title">AICE Wrap · ML Playground</div>
+      <div class="brand-sub">Learn AI &amp; Machine Learning by playing with it</div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span class="pill" id="progressPill">Session 1 of 6</span>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <button class="nav-btn active" data-target="s1"><span class="n">1</span> Intro to AI</button>
+    <button class="nav-btn" data-target="s2"><span class="n">2</span> Classification (KNN)</button>
+    <button class="nav-btn" data-target="s3"><span class="n">3</span> Regression</button>
+    <button class="nav-btn" data-target="s4"><span class="n">4</span> Clustering (K-Means)</button>
+    <button class="nav-btn" data-target="s5"><span class="n">5</span> Trees &amp; Forests</button>
+    <button class="nav-btn" data-target="s6"><span class="n">6</span> Neural Networks</button>
+    <div class="sidebar-foot">
+      <p>Tip: every panel is interactive. Click, drag, and tweak the sliders. Mistakes are free here. 🎈</p>
+    </div>
+  </nav>
+
+  <main class="content">
+    <!-- ================= SESSION 1 ================= -->
+    <section class="session active" id="s1">
+      <h1>1 · What is Artificial Intelligence?</h1>
+      <p class="lead">AI is about getting computers to do things that normally need human <em>intelligence</em> — recognizing a face, understanding speech, recommending a song, or driving a car.</p>
+
+      <div class="card">
+        <h2>The big idea: rules vs. learning</h2>
+        <p>There are two ways to make a computer "smart". Flip between them below.</p>
+        <div class="toggle-row">
+          <button class="seg active" data-mode="rules">🧱 Traditional Programming</button>
+          <button class="seg" data-mode="ml">🧠 Machine Learning</button>
+        </div>
+        <div class="flow" id="flowBox"></div>
+        <p class="muted" id="flowExplain"></p>
+        <p class="tryit"><b>🎯 Try this:</b> read the Traditional path, then the Machine Learning path. Ask: <em>who writes the rules</em> in each one?</p>
+      </div>
+
+      <div class="card">
+        <h2>AI → Machine Learning → Deep Learning</h2>
+        <p>These words are often mixed up. They are actually nested circles — each one is a part of the bigger one. Hover or tap each ring.</p>
+        <div class="nested-wrap">
+          <div class="ring ai" data-info="ai"><span>Artificial Intelligence<br><small>Any machine that mimics smart behavior</small></span>
+            <div class="ring ml" data-info="ml"><span>Machine Learning<br><small>Learns patterns from data</small></span>
+              <div class="ring dl" data-info="dl"><span>Deep Learning<br><small>Neural networks (Session 6)</small></span></div>
+            </div>
+          </div>
+          <div class="ring-info" id="ringInfo">Tap a ring to learn more.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Quick check: which kind of learning?</h2>
+        <p>In this course you'll meet three families. Drag each example to the right bucket — or just click an example then click a bucket.</p>
+        <div id="sortGame"></div>
+      </div>
+    </section>
+
+    <!-- ================= SESSION 2 ================= -->
+    <section class="session" id="s2">
+      <h1>2 · Classification with K-Nearest Neighbors</h1>
+      <p class="lead">A <strong>classifier</strong> sorts things into categories. KNN is the friendliest one: to label a new point, it just looks at its <em>k</em> closest neighbors and takes a vote.</p>
+
+      <div class="card">
+        <div class="demo-grid">
+          <canvas id="knnCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Add points as:
+              <div class="toggle-row small">
+                <button class="seg active" data-knnclass="0">🔴 Class A</button>
+                <button class="seg" data-knnclass="1">🔵 Class B</button>
+              </div>
+            </label>
+            <label>k (neighbors who vote): <b id="kVal">3</b>
+              <input type="range" id="kSlider" min="1" max="15" step="2" value="3" />
+            </label>
+            <p class="muted">Click empty space to drop a <b>training</b> point. Click the <b>★ test point</b> mode to place the mystery point KNN must classify.</p>
+            <div class="toggle-row small">
+              <button class="seg" id="placeTest">★ Place test point</button>
+              <button class="seg" id="knnClear">Clear all</button>
+            </div>
+            <div class="readout" id="knnReadout">Drop some red &amp; blue points, then place a ★ test point.</div>
+          </div>
+        </div>
+        <p class="muted">Notice how changing <b>k</b> can flip the prediction. Small k = sensitive to noise; large k = smoother but can ignore local detail.</p>
+        <p class="tryit"><b>🎯 Try this:</b> build two clear groups, place the ★ right between them near the smaller group, then drag <b>k</b> from 1 → 15 and watch the vote flip.</p>
+      </div>
+    </section>
+
+    <!-- ================= SESSION 3 ================= -->
+    <section class="session" id="s3">
+      <h1>3 · Regression: predicting a number</h1>
+      <p class="lead">Classification predicts a <em>category</em>. <strong>Regression</strong> predicts a <em>number</em> — like price from size, or score from hours studied. We fit the line that's as close as possible to all the points.</p>
+
+      <div class="card">
+        <div class="demo-grid">
+          <canvas id="regCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <p class="muted">Click to add data points. <b>Drag</b> points to move them and watch the best-fit line chase them.</p>
+            <label><input type="checkbox" id="regResid" checked /> Show errors (residuals)</label>
+            <label><input type="checkbox" id="regManual" /> Let me drag the line myself</label>
+            <div class="stat-block">
+              <div>Line: <b id="regEq">y = …</b></div>
+              <div>Error (MSE): <b id="regMse">—</b></div>
+            </div>
+            <label>Predict y for x = <b id="regXval">5</b>
+              <input type="range" id="regX" min="0" max="10" step="0.1" value="5" />
+              <div class="readout" id="regPred">ŷ = —</div>
+            </label>
+            <button class="seg" id="regClear">Clear</button>
+            <button class="seg" id="regSeed">Example data</button>
+          </div>
+        </div>
+        <p class="muted">The computer finds the line with the smallest total error. That's literally all "training" means here.</p>
+        <p class="tryit"><b>🎯 Try this:</b> add one point far away from the rest (an <em>outlier</em>) and watch how much it drags the whole line. Real data is messy!</p>
+      </div>
+    </section>
+
+    <!-- ================= SESSION 4 ================= -->
+    <section class="session" id="s4">
+      <h1>4 · Clustering with K-Means</h1>
+      <p class="lead">Now there are <em>no labels</em> — this is <strong>unsupervised learning</strong>. The machine must discover groups on its own. K-Means finds <em>k</em> cluster centers and pulls points toward the nearest one.</p>
+
+      <div class="card">
+        <div class="demo-grid">
+          <canvas id="kmCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Number of clusters k: <b id="kmKval">3</b>
+              <input type="range" id="kmK" min="1" max="6" value="3" />
+            </label>
+            <button class="seg" id="kmStep">Step ▶</button>
+            <button class="seg" id="kmAuto">Auto-run ⏩</button>
+            <button class="seg" id="kmReset">New centers</button>
+            <button class="seg" id="kmScatter">Shuffle points</button>
+            <div class="readout" id="kmReadout">Press <b>Step</b> to: (1) color each point by nearest center, then (2) move each center to its group's average.</div>
+          </div>
+        </div>
+        <p class="muted">Each step has two moves: <b>assign</b> points to the closest center, then <b>update</b> centers to the middle of their points. Repeat until nothing moves.</p>
+        <p class="tryit"><b>🎯 Try this:</b> when there are clearly 4 blobs, set <b>k = 2</b> and Auto-run — see how the machine is forced to lump groups together. Then raise k to match.</p>
+      </div>
+    </section>
+
+    <!-- ================= SESSION 5 ================= -->
+    <section class="session" id="s5">
+      <h1>5 · Decision Trees, Random Forests &amp; Grid Search</h1>
+      <p class="lead">A <strong>decision tree</strong> asks yes/no questions to split the data into boxes. A <strong>random forest</strong> is a crowd of trees voting together. <strong>Grid search</strong> is how we hunt for the best settings.</p>
+
+      <div class="card">
+        <h2>Decision boundaries: one tree vs. a forest</h2>
+        <div class="demo-grid">
+          <canvas id="treeCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Max depth (how many questions): <b id="depthVal">3</b>
+              <input type="range" id="depthSlider" min="1" max="8" value="3" />
+            </label>
+            <label>Trees in the forest: <b id="treesVal">1</b>
+              <input type="range" id="treesSlider" min="1" max="40" value="1" />
+            </label>
+            <p class="muted">1 tree = sharp, blocky boundaries that can <b>overfit</b>. More trees = smoother, more reliable.</p>
+            <button class="seg" id="treeShuffle">New dataset</button>
+            <div class="readout" id="treeReadout"></div>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> set <b>1 tree</b> at <b>depth 8</b> — see the jagged, over-fitted boxes. Now drag <b>trees</b> up to 40 and watch the boundary smooth out. That's the power of a forest.</p>
+      </div>
+
+      <div class="card">
+        <h2>Grid Search: finding the best settings</h2>
+        <p>Models have knobs (<em>hyperparameters</em>). Grid search just <b>tries every combination</b> and keeps the best. Hover a cell to see its score — the 🏆 is the winner.</p>
+        <div id="gridSearch"></div>
+      </div>
+    </section>
+
+    <!-- ================= SESSION 6 ================= -->
+    <section class="session" id="s6">
+      <h1>6 · Artificial Neural Networks</h1>
+      <p class="lead">A neural network is built from tiny units called <strong>neurons</strong>. Each neuron multiplies its inputs by <em>weights</em>, adds them up, and fires a signal. Stack enough of them and the network can learn almost anything.</p>
+
+      <div class="card">
+        <h2>Meet one neuron</h2>
+        <p>Slide the weights and watch the neuron's output change. The activation function squashes the result between 0 and 1 — "how strongly should I fire?"</p>
+        <div class="demo-grid">
+          <canvas id="neuronCanvas" width="520" height="300"></canvas>
+          <div class="controls">
+            <h3>Inputs &amp; weights</h3>
+            <label>Input x₁: <b id="nx1v">0.6</b><input type="range" id="nx1" min="0" max="1" step="0.05" value="0.6"></label>
+            <label>Weight w₁: <b id="nw1v">0.8</b><input type="range" id="nw1" min="-2" max="2" step="0.1" value="0.8"></label>
+            <label>Input x₂: <b id="nx2v">0.3</b><input type="range" id="nx2" min="0" max="1" step="0.05" value="0.3"></label>
+            <label>Weight w₂: <b id="nw2v">-0.5</b><input type="range" id="nw2" min="-2" max="2" step="0.1" value="-0.5"></label>
+            <label>Bias b: <b id="nbv">0.1</b><input type="range" id="nb" min="-2" max="2" step="0.1" value="0.1"></label>
+            <div class="readout" id="neuronReadout"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>A network that learns</h2>
+        <p>Click <b>Train</b> and watch a small network learn to separate the two colors. The background shows what it currently "believes". This is the same idea behind image recognition — just bigger.</p>
+        <div class="demo-grid">
+          <canvas id="netCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Pattern:
+              <select id="netPattern">
+                <option value="linear">Easy (two blobs)</option>
+                <option value="circle">Hard (circle inside)</option>
+                <option value="xor">Very hard (XOR)</option>
+              </select>
+            </label>
+            <button class="seg" id="netTrain">Train ▶</button>
+            <button class="seg" id="netReset">Reset</button>
+            <label>Hidden neurons: <b id="netHv">8</b>
+              <input type="range" id="netH" min="2" max="16" value="8"></label>
+            <div class="readout" id="netReadout">Epoch 0 · accuracy —</div>
+            <p class="muted">More hidden neurons = the network can draw more complicated boundaries.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> pick the <b>XOR</b> pattern with just <b>2</b> hidden neurons and Train — it struggles. Reset, raise hidden neurons to 12, and Train again. More neurons = more brainpower.</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="foot">Built for CMKL · AICE Wrap. Open-source classroom tool — refresh the page anytime to reset.</footer>
+
+<script src="js/session1.js"></script>
+<script src="js/session2_knn.js"></script>
+<script src="js/session3_reg.js"></script>
+<script src="js/session4_kmeans.js"></script>
+<script src="js/session5_trees.js"></script>
+<script src="js/session6_nn.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
