@@ -26,8 +26,8 @@
     <button class="nav-btn active" data-target="home"><span class="n">⌂</span> Home</button>
     <div class="nav-group">Supervised Learning</div>
     <button class="nav-btn" data-target="t1"><span class="n">1</span> Intro to AI</button>
-    <button class="nav-btn" data-target="t2"><span class="n">2</span> Classification · KNN</button>
-    <button class="nav-btn" data-target="t3"><span class="n">3</span> Regression</button>
+    <button class="nav-btn" data-target="t2"><span class="n">2</span> Classification Algorithms</button>
+    <button class="nav-btn" data-target="t3"><span class="n">3</span> Regression Algorithms</button>
     <div class="nav-group">Unsupervised &amp; Advanced</div>
     <button class="nav-btn" data-target="t4"><span class="n">4</span> Clustering · K-Means</button>
     <button class="nav-btn" data-target="t5"><span class="n">5</span> Trees &amp; Forests</button>
@@ -62,14 +62,14 @@
     <div class="home-why">
       <div class="why-card"><span class="ico">🎯</span><h3>Intuition first</h3><p>We start every topic with a story and a picture — the equations can wait. You'll <em>feel</em> why an algorithm works before you ever see a formula.</p></div>
       <div class="why-card"><span class="ico">🕹️</span><h3>Learn by doing</h3><p>Drag a point and watch the model react. Change one setting and see it overfit. Understanding sticks when you cause it yourself.</p></div>
-      <div class="why-card"><span class="ico">🧠</span><h3>Built from scratch</h3><p>Every model here — KNN, regression, K-Means, decision trees, neural nets — is real, running live in your browser. Nothing is faked.</p></div>
+      <div class="why-card"><span class="ico">🧠</span><h3>Built from scratch</h3><p>Every model here — KNN, logistic regression, Naive Bayes, linear regression, trees, forests, K-Means, neural nets — is real, running live in your browser. Nothing is faked.</p></div>
     </div>
 
     <h2 class="section-h">The course map</h2>
     <div class="module-grid">
       <button class="mod-card" data-go="t1"><span class="mod-n">1</span><h3>Intro to AI</h3><p>What AI really is, the three ways machines learn, and how a model is built.</p><span class="tag">Foundations</span></button>
-      <button class="mod-card" data-go="t2"><span class="mod-n">2</span><h3>Classification · KNN</h3><p>Sort things into categories by looking at their nearest neighbors.</p><span class="tag">Supervised</span></button>
-      <button class="mod-card" data-go="t3"><span class="mod-n">3</span><h3>Regression</h3><p>Predict a number, and discover how a machine actually <em>learns</em> the best answer.</p><span class="tag">Supervised</span></button>
+      <button class="mod-card" data-go="t2"><span class="mod-n">2</span><h3>Classification Algorithms</h3><p>Sort things into categories with neighbors, lines, questions, forests, and probabilities.</p><span class="tag">Supervised</span></button>
+      <button class="mod-card" data-go="t3"><span class="mod-n">3</span><h3>Regression Algorithms</h3><p>Predict a number with lines, neighbors, tree steps, and forest averages.</p><span class="tag">Supervised</span></button>
       <button class="mod-card" data-go="t4"><span class="mod-n">4</span><h3>Clustering · K-Means</h3><p>Find hidden groups in data with no labels at all.</p><span class="tag">Unsupervised</span></button>
       <button class="mod-card" data-go="t5"><span class="mod-n">5</span><h3>Trees &amp; Forests</h3><p>Yes/no questions, a crowd of trees voting, and tuning the knobs.</p><span class="tag">Advanced</span></button>
       <button class="mod-card" data-go="t6"><span class="mod-n">6</span><h3>Neural Networks</h3><p>From one tiny neuron to a network that teaches itself.</p><span class="tag">Deep Learning</span></button>
@@ -151,12 +151,39 @@
 
   <!-- ============================ MODULE 2 ============================ -->
   <section class="topic" id="t2">
-    <div class="topic-head"><h1>2 · Classification with K-Nearest Neighbors</h1>
-      <p class="lead">A classifier sorts things into categories. KNN is the most intuitive one in all of machine learning: to label something new, just look at what's nearby.</p></div>
-    <div class="subtabs" data-topic="t2">
-      <button class="subtab active" data-lesson="t2l1">The big idea</button>
-      <button class="subtab" data-lesson="t2l2">KNN Playground</button>
+    <div class="topic-head"><h1>2 · Classification Algorithms</h1>
+      <p class="lead">A classifier sorts things into categories. Start with KNN's neighbor vote, then compare lines, yes/no questions, forests, and probability evidence on the same red-vs-blue task.</p></div>
+    <div class="algo-tabs" data-topic="t2">
+      <button class="algo-tab active" data-algo="knn">KNN</button>
+      <button class="algo-tab" data-algo="logistic">Logistic Regression</button>
+      <button class="algo-tab" data-algo="tree">Decision Tree</button>
+      <button class="algo-tab" data-algo="forest">Random Forest</button>
+      <button class="algo-tab" data-algo="bayes">Naive Bayes</button>
+    </div>
+    <div class="subtabs lesson-tabset active" data-topic="t2" data-algo="knn">
+      <button class="subtab active" data-lesson="t2l1">Big picture</button>
+      <button class="subtab" data-lesson="t2l2">Playground</button>
       <button class="subtab" data-lesson="t2l3">Choosing k</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t2" data-algo="logistic">
+      <button class="subtab" data-lesson="t2l4">Big picture</button>
+      <button class="subtab" data-lesson="t2l5">Playground</button>
+      <button class="subtab" data-lesson="t2l6">Threshold</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t2" data-algo="tree">
+      <button class="subtab" data-lesson="t2l7">Big picture</button>
+      <button class="subtab" data-lesson="t2l8">Playground</button>
+      <button class="subtab" data-lesson="t2l9">Depth</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t2" data-algo="forest">
+      <button class="subtab" data-lesson="t2l10">Big picture</button>
+      <button class="subtab" data-lesson="t2l11">Playground</button>
+      <button class="subtab" data-lesson="t2l12">Tuning</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t2" data-algo="bayes">
+      <button class="subtab" data-lesson="t2l13">Big picture</button>
+      <button class="subtab" data-lesson="t2l14">Playground</button>
+      <button class="subtab" data-lesson="t2l15">Smoothing</button>
     </div>
 
     <div class="lesson active" id="t2l1">
@@ -225,19 +252,316 @@
         <p class="tryit"><b>🎯 Try this:</b> set k = 1 and find the lonely island around a single stray point. Now raise k until that island disappears.</p>
       </div>
     </div>
+
+    <div class="lesson" id="t2l4">
+      <div class="card">
+        <h2>Logistic regression: a soft line between classes</h2>
+        <p>Logistic regression draws a line, then turns distance from that line into a <b>probability</b>. Far on one side is confidently red, far on the other is confidently blue, and near the line is uncertain.</p>
+        <div class="demo-grid">
+          <canvas id="logIdeaCanvas" width="520" height="380"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Move the boundary: <b id="logIdeaBiasv">0.00</b><input type="range" id="logIdeaBias" min="-1.2" max="1.2" step="0.05" value="0"></label>
+            <label>Confidence slope: <b id="logIdeaSlopev">7</b><input type="range" id="logIdeaSlope" min="2" max="16" step="1" value="7"></label>
+            <div class="readout" id="logIdeaReadout"></div>
+            <p class="muted">A steeper slope makes probabilities jump from red to blue faster. The boundary is where the model is 50/50.</p>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use logistic regression?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> you need a fast baseline, probabilities, and a fairly straight separation between classes.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> the real boundary is curved or has many islands; a plain line will underfit.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> churn risk, loan default, disease screening, and click prediction.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l5">
+      <div class="card">
+        <h2>Logistic regression playground</h2>
+        <p>Build a red/blue dataset, train a logistic classifier, then place the <b>★ test point</b>. The background shows the model's probability for blue.</p>
+        <div class="demo-grid">
+          <canvas id="logPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Add points as:
+              <div class="toggle-row small">
+                <button class="seg active" data-logclass="0">🔴 Class A</button>
+                <button class="seg" data-logclass="1">🔵 Class B</button>
+              </div>
+            </label>
+            <label>Learning rate: <b id="logLrv">0.80</b><input type="range" id="logLr" min="0.1" max="1.5" step="0.05" value="0.8"></label>
+            <div class="toggle-row small">
+              <button class="seg" id="logTrain">Train ▶</button>
+              <button class="seg" id="logPlace">★ Place test point</button>
+              <button class="seg" id="logReset">Reset data</button>
+            </div>
+            <div class="readout" id="logReadout">Train the model, then place the ★ test point.</div>
+            <p class="muted">Train animates 240 gradient steps from a fresh starting line. Click again after changing data or learning rate.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> add one noisy red point inside the blue group and train again. Notice the line moves, but it cannot bend around one point.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l6">
+      <div class="card">
+        <h2>The threshold: when does probability become a class?</h2>
+        <p>Logistic regression outputs a probability. The <b>threshold</b> is the rule that converts it into red or blue: above the threshold means blue, below means red.</p>
+        <div class="demo-grid">
+          <canvas id="logTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Threshold: <b id="logThreshv">0.50</b><input type="range" id="logThresh" min="0.10" max="0.90" step="0.05" value="0.50"></label>
+            <label>Training epochs: <b id="logEpochv">160</b><input type="range" id="logEpoch" min="20" max="400" step="20" value="160"></label>
+            <button class="seg" id="logTuneShuffle">New data</button>
+            <div class="readout" id="logTuneReadout"></div>
+            <p class="muted">A higher threshold makes the model demand stronger evidence before predicting blue.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> raise the threshold to 0.80. Which blue points stop being blue, and why?</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l7">
+      <div class="card">
+        <h2>Decision trees: classification by yes/no questions</h2>
+        <p>A decision tree splits the map with simple questions like <b>x &lt; 0.42?</b> or <b>y &lt; 0.63?</b>. Follow the branches until a leaf gives the class.</p>
+        <div class="demo-grid">
+          <canvas id="dtIdeaCanvas" width="520" height="380"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Questions allowed (depth): <b id="dtIdeaDepthv">2</b><input type="range" id="dtIdeaDepth" min="1" max="4" value="2"></label>
+            <div class="readout" id="dtIdeaReadout"></div>
+            <p class="muted">More depth means more questions. That can capture detail, but too much depth can memorize noise.</p>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use a decision tree?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> you want readable rules and a boundary that can turn corners.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> the tree gets deep; it can memorize the training data.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> triage rules, loan decisions, support routing, and fraud flags.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l8">
+      <div class="card">
+        <h2>Decision tree playground</h2>
+        <p>Drop training points, choose how many questions the tree may ask, then train. The painted map shows the leaf each pixel lands in.</p>
+        <div class="demo-grid">
+          <canvas id="dtPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Add points as:
+              <div class="toggle-row small">
+                <button class="seg active" data-dtclass="0">🔴 Class A</button>
+                <button class="seg" data-dtclass="1">🔵 Class B</button>
+              </div>
+            </label>
+            <label>Max depth: <b id="dtDepthv">3</b><input type="range" id="dtDepth" min="1" max="7" value="3"></label>
+            <div class="toggle-row small">
+              <button class="seg" id="dtTrain">Train tree</button>
+              <button class="seg" id="dtPlace">★ Place test point</button>
+              <button class="seg" id="dtReset">Reset data</button>
+            </div>
+            <div class="readout" id="dtReadout">Train the tree, then place the ★ test point.</div>
+            <p class="muted">A tree is built in one pass from the current data. There are no epochs; changing depth after training rebuilds it.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> make a checkerboard of red and blue points. A shallow tree struggles; a deep tree starts carving boxes.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l9">
+      <div class="card">
+        <h2>Depth controls underfitting and overfitting</h2>
+        <p>Depth is the tree's main knob. Too shallow: it misses real structure. Too deep: it wraps around noise. Watch the boundary change on the same dataset.</p>
+        <div class="demo-grid">
+          <canvas id="dtTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Max depth: <b id="dtTuneDepthv">1</b><input type="range" id="dtTuneDepth" min="1" max="8" value="1"></label>
+            <button class="seg" id="dtTuneShuffle">New data</button>
+            <div class="readout" id="dtTuneReadout"></div>
+            <p class="muted">The best depth is usually the smallest one that captures the real pattern.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> slide from depth 1 to 8. Find the point where the boundary starts chasing individual noisy dots.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l10">
+      <div class="card">
+        <h2>Random forests: many trees vote</h2>
+        <p>A random forest trains many slightly different trees, then averages their votes. One tree can be jumpy; a crowd of trees is usually smoother and more reliable.</p>
+        <div class="demo-grid">
+          <canvas id="rfIdeaCanvas" width="520" height="380"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Trees voting: <b id="rfIdeaTreesv">5</b><input type="range" id="rfIdeaTrees" min="1" max="35" step="2" value="5"></label>
+            <label>Tree depth: <b id="rfIdeaDepthv">4</b><input type="range" id="rfIdeaDepth" min="1" max="8" value="4"></label>
+            <button class="seg" id="rfIdeaShuffle">New data</button>
+            <div class="readout" id="rfIdeaReadout"></div>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use a random forest?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> you want strong accuracy on tabular data without much feature scaling.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> you need one simple explanation; a forest is harder to read than one tree.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> fraud detection, churn prediction, medical risk, and ranking leads.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l11">
+      <div class="card">
+        <h2>Random forest playground</h2>
+        <p>Build a dataset, train a forest, and place the <b>★ test point</b>. The model predicts from the average vote across many trees.</p>
+        <div class="demo-grid">
+          <canvas id="rfPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Add points as:
+              <div class="toggle-row small">
+                <button class="seg active" data-rfclass="0">🔴 Class A</button>
+                <button class="seg" data-rfclass="1">🔵 Class B</button>
+              </div>
+            </label>
+            <label>Trees: <b id="rfTreesv">15</b><input type="range" id="rfTrees" min="1" max="41" step="2" value="15"></label>
+            <label>Depth: <b id="rfDepthv">4</b><input type="range" id="rfDepth" min="1" max="8" value="4"></label>
+            <div class="toggle-row small">
+              <button class="seg" id="rfTrain">Train forest</button>
+              <button class="seg" id="rfPlace">★ Place test point</button>
+              <button class="seg" id="rfReset">Reset data</button>
+            </div>
+            <div class="readout" id="rfReadout">Train the forest, then place the ★ test point.</div>
+            <p class="muted">A forest builds all selected trees in one click. Click again to resample and rebuild the forest.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> train with one tree, then raise the tree count and train again. Watch the noisy edges settle down.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l12">
+      <div class="card">
+        <h2>Two knobs: tree count and depth</h2>
+        <p>Forests have two important knobs. <b>Depth</b> controls how complex each tree can be. <b>Tree count</b> controls how much voting smooths the result.</p>
+        <div class="demo-grid">
+          <canvas id="rfTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Trees: <b id="rfTuneTreesv">1</b><input type="range" id="rfTuneTrees" min="1" max="51" step="2" value="1"></label>
+            <label>Depth: <b id="rfTuneDepthv">7</b><input type="range" id="rfTuneDepth" min="1" max="8" value="7"></label>
+            <button class="seg" id="rfTuneShuffle">New data</button>
+            <div class="readout" id="rfTuneReadout"></div>
+            <p class="muted">More trees usually smooth a high-depth forest, but they do not fix bad data.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> keep depth high and move from 1 tree to 51. The jagged single-tree boxes become a softer vote map.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l13">
+      <div class="card">
+        <h2>Naive Bayes: evidence from each feature</h2>
+        <p>Naive Bayes asks: "How likely is this x-value for red? How likely is this y-value for red?" It combines those pieces of evidence and compares red against blue.</p>
+        <div class="demo-grid">
+          <canvas id="nbIdeaCanvas" width="520" height="380"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Probe x: <b id="nbIdeaXv">0.50</b><input type="range" id="nbIdeaX" min="0.05" max="0.95" step="0.01" value="0.50"></label>
+            <label>Probe y: <b id="nbIdeaYv">0.50</b><input type="range" id="nbIdeaY" min="0.05" max="0.95" step="0.01" value="0.50"></label>
+            <div class="readout" id="nbIdeaReadout"></div>
+            <p class="muted">"Naive" means it treats features as independent clues. That is often wrong, but surprisingly useful.</p>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use Naive Bayes?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> you need a very fast classifier and features act like separate clues.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> features strongly depend on each other; the "naive" assumption can mislead it.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> spam filtering, sentiment, document tagging, and quick medical triage.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l14">
+      <div class="card">
+        <h2>Naive Bayes playground</h2>
+        <p>Add examples, place the <b>★ test point</b>, and compare how much evidence the model sees for red versus blue.</p>
+        <div class="demo-grid">
+          <canvas id="nbPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Add points as:
+              <div class="toggle-row small">
+                <button class="seg active" data-nbclass="0">🔴 Class A</button>
+                <button class="seg" data-nbclass="1">🔵 Class B</button>
+              </div>
+            </label>
+            <label>Smoothing: <b id="nbSmoothv">0.04</b><input type="range" id="nbSmooth" min="0.01" max="0.14" step="0.01" value="0.04"></label>
+            <div class="toggle-row small">
+              <button class="seg" id="nbPlace">★ Place test point</button>
+              <button class="seg" id="nbReset">Reset data</button>
+            </div>
+            <div class="readout" id="nbReadout">Place the ★ test point to compare class evidence.</div>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> make red and blue overlap in x but separate in y. Naive Bayes can still use the y evidence.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t2l15">
+      <div class="card">
+        <h2>Smoothing keeps Naive Bayes from overreacting</h2>
+        <p>With very little data, Naive Bayes can become too confident. Smoothing adds a little caution so one tight cluster does not dominate the whole map.</p>
+        <div class="demo-grid">
+          <canvas id="nbTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Smoothing: <b id="nbTuneSmoothv">0.02</b><input type="range" id="nbTuneSmooth" min="0.00" max="0.18" step="0.01" value="0.02"></label>
+            <button class="seg" id="nbTuneShuffle">New data</button>
+            <div class="readout" id="nbTuneReadout"></div>
+            <p class="muted">More smoothing makes the boundary less brittle, but too much can wash away useful detail.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> start near 0.00 smoothing, then raise it. Watch tiny confident pockets soften.</p>
+      </div>
+    </div>
   </section>
 
   <!-- ============================ MODULE 3 ============================ -->
   <section class="topic" id="t3">
-    <div class="topic-head"><h1>3 · Regression: predicting a number</h1>
-      <p class="lead">Classification predicts a category. Regression predicts a <em>number</em> — a price, a score, a temperature. And it's the perfect place to see, for the first time, how a machine truly <em>learns</em>.</p></div>
-    <div class="subtabs" data-topic="t3">
-      <button class="subtab active" data-lesson="t3l1">Best-fit line</button>
-      <button class="subtab" data-lesson="t3l2">Why this line?</button>
-      <button class="subtab" data-lesson="t3l3">Gradient descent</button>
+    <div class="topic-head"><h1>3 · Regression Algorithms</h1>
+      <p class="lead">Classification predicts a category. Regression predicts a <em>number</em> — a price, a score, a temperature. Compare straight lines, neighbors, tree steps, and forest averages on the same x-to-y prediction task.</p></div>
+    <div class="algo-tabs" data-topic="t3">
+      <button class="algo-tab active" data-algo="linear">Linear Regression</button>
+      <button class="algo-tab" data-algo="knn-reg">KNN Regressor</button>
+      <button class="algo-tab" data-algo="tree-reg">Decision Tree Regressor</button>
+      <button class="algo-tab" data-algo="forest-reg">Random Forest Regressor</button>
+    </div>
+    <div class="subtabs lesson-tabset active" data-topic="t3" data-algo="linear">
+      <button class="subtab active" data-lesson="t3l2">Big picture</button>
+      <button class="subtab" data-lesson="t3l1">Playground</button>
+      <button class="subtab" data-lesson="t3l3">Learning</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t3" data-algo="knn-reg">
+      <button class="subtab" data-lesson="t3l4">Big picture</button>
+      <button class="subtab" data-lesson="t3l5">Playground</button>
+      <button class="subtab" data-lesson="t3l6">Choosing k</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t3" data-algo="tree-reg">
+      <button class="subtab" data-lesson="t3l7">Big picture</button>
+      <button class="subtab" data-lesson="t3l8">Playground</button>
+      <button class="subtab" data-lesson="t3l9">Depth</button>
+    </div>
+    <div class="subtabs lesson-tabset" data-topic="t3" data-algo="forest-reg">
+      <button class="subtab" data-lesson="t3l10">Big picture</button>
+      <button class="subtab" data-lesson="t3l11">Playground</button>
+      <button class="subtab" data-lesson="t3l12">Tuning</button>
     </div>
 
-    <div class="lesson active" id="t3l1">
+    <div class="lesson" id="t3l1">
       <div class="card">
         <h2>Fitting a line to data</h2>
         <p>Click to add points (think: hours studied vs. exam score). Drag them around and watch the best-fit line chase them. That line is the model — give it any x and it predicts a y.</p>
@@ -267,7 +591,7 @@
       </div>
     </div>
 
-    <div class="lesson" id="t3l2">
+    <div class="lesson active" id="t3l2">
       <div class="card">
         <h2>Why <em>this</em> line and not another?</h2>
         <p>Out of infinite possible lines, what makes one "best"? We measure how wrong a line is by adding up its errors — the <b>cost</b>. Tilt and shift the line yourself and try to make the cost as small as possible.</p>
@@ -302,6 +626,189 @@
           </div>
         </div>
         <p class="tryit"><b>🎯 Try this:</b> crank the learning rate to max and Train — watch the line overshoot and wobble before settling (or blowing up!).</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l4">
+      <div class="card">
+        <h2>KNN regressor: average the nearby answers</h2>
+        <p>KNN can predict numbers too. Instead of taking a class vote, it finds the <b>k nearest x-values</b> and averages their y-values.</p>
+        <div class="demo-grid">
+          <canvas id="knnrIdeaCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Neighbors to average: <b id="knnrIdeaKv">3</b><input type="range" id="knnrIdeaK" min="1" max="11" step="2" value="3"></label>
+            <label>Predict at x = <b id="knnrIdeaXv">5.0</b><input type="range" id="knnrIdeaX" min="0" max="10" step="0.1" value="5"></label>
+            <div class="readout" id="knnrIdeaReadout"></div>
+            <p class="muted">Near points matter; far points are ignored. The prediction is a local average, not a line.</p>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use KNN regression?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> similar examples should have similar numeric answers and the data is small enough to search.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> data is huge, noisy, or has too many features for distance to stay meaningful.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> estimating a house price from nearby homes, local demand forecasts, and simple recommendation scores.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l5">
+      <div class="card">
+        <h2>KNN regression playground</h2>
+        <p>Add and drag examples, move the prediction slider, and watch KNN average the nearest y-values to predict a number.</p>
+        <div class="demo-grid">
+          <canvas id="knnrPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>k: <b id="knnrKv">3</b><input type="range" id="knnrK" min="1" max="15" step="2" value="3"></label>
+            <label>Predict y for x = <b id="knnrXv">5.0</b><input type="range" id="knnrX" min="0" max="10" step="0.1" value="5"></label>
+            <button class="seg" id="knnrClear">Clear</button>
+            <button class="seg" id="knnrSeed">Example data</button>
+            <div class="readout" id="knnrReadout"></div>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> add one very high point near x = 5. With k = 1 it dominates; with larger k it gets averaged down.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l6">
+      <div class="card">
+        <h2>Choosing k changes smoothness</h2>
+        <p>Small k follows local bumps closely. Large k smooths the curve, but can wash away real detail. The same bias-vs-variance idea appears again.</p>
+        <div class="demo-grid">
+          <canvas id="knnrTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>k: <b id="knnrTuneKv">1</b><input type="range" id="knnrTuneK" min="1" max="25" step="2" value="1"></label>
+            <button class="seg" id="knnrTuneShuffle">New data</button>
+            <div class="readout" id="knnrTuneReadout"></div>
+            <p class="muted"><b>k = 1</b> can zigzag through noise. <b>Large k</b> becomes smoother and less sensitive.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> start at k = 1, then raise k until the noisy wiggles disappear.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l7">
+      <div class="card">
+        <h2>Decision tree regressor: split, then average</h2>
+        <p>A decision tree regressor cuts the x-axis into regions. Inside each region, it predicts the <b>average y</b> of the training points that landed there.</p>
+        <div class="demo-grid">
+          <canvas id="dtrIdeaCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Questions allowed (depth): <b id="dtrIdeaDepthv">2</b><input type="range" id="dtrIdeaDepth" min="1" max="6" value="2"></label>
+            <div class="readout" id="dtrIdeaReadout"></div>
+            <p class="muted">The result is a staircase: constant predictions inside each leaf, jumps at split points.</p>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use tree regression?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> the relationship has thresholds, flat regions, or sharp changes a line cannot capture.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> deep trees memorize noise and make jumpy predictions.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> price estimates with brackets, risk scores, demand forecasts, and rule-like business data.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l8">
+      <div class="card">
+        <h2>Decision tree regression playground</h2>
+        <p>Add and drag points, choose a max depth, and train a tree. The staircase shows each leaf's average prediction.</p>
+        <div class="demo-grid">
+          <canvas id="dtrPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Max depth: <b id="dtrDepthv">3</b><input type="range" id="dtrDepth" min="1" max="8" value="3"></label>
+            <label>Predict y for x = <b id="dtrXv">5.0</b><input type="range" id="dtrX" min="0" max="10" step="0.1" value="5"></label>
+            <button class="seg" id="dtrTrain">Train tree</button>
+            <button class="seg" id="dtrClear">Clear</button>
+            <button class="seg" id="dtrSeed">Example data</button>
+            <div class="readout" id="dtrReadout"></div>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> add two flat clusters at different heights. A tree finds the jump faster than a line can.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l9">
+      <div class="card">
+        <h2>Depth controls tree complexity</h2>
+        <p>A shallow tree gives a few broad averages. A deep tree creates many tiny steps and can chase noisy points.</p>
+        <div class="demo-grid">
+          <canvas id="dtrTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Max depth: <b id="dtrTuneDepthv">1</b><input type="range" id="dtrTuneDepth" min="1" max="9" value="1"></label>
+            <button class="seg" id="dtrTuneShuffle">New data</button>
+            <div class="readout" id="dtrTuneReadout"></div>
+            <p class="muted">Look for the smallest depth that captures the main shape without chasing every bump.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> raise depth until the tree begins drawing tiny steps around single points.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l10">
+      <div class="card">
+        <h2>Random forest regressor: average many trees</h2>
+        <p>A forest trains many different regression trees, then averages their numeric predictions. The result is usually smoother than one deep tree.</p>
+        <div class="demo-grid">
+          <canvas id="rfrIdeaCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Trees: <b id="rfrIdeaTreesv">9</b><input type="range" id="rfrIdeaTrees" min="1" max="41" step="2" value="9"></label>
+            <label>Depth: <b id="rfrIdeaDepthv">5</b><input type="range" id="rfrIdeaDepth" min="1" max="8" value="5"></label>
+            <button class="seg" id="rfrIdeaShuffle">New data</button>
+            <div class="readout" id="rfrIdeaReadout"></div>
+          </div>
+        </div>
+      </div>
+      <div class="whenbox">
+        <h3 class="wb-title">When would you actually use forest regression?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> you want strong tabular predictions and the pattern is not a simple line.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> you need a tiny formula; forests trade interpretability for accuracy.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> house prices, delivery time estimates, demand forecasting, and risk scores.</div></div>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l11">
+      <div class="card">
+        <h2>Random forest regression playground</h2>
+        <p>Add examples, train a forest, and predict y for any x. Each tree gives a step prediction; the forest averages them.</p>
+        <div class="demo-grid">
+          <canvas id="rfrPlayCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Trees: <b id="rfrTreesv">15</b><input type="range" id="rfrTrees" min="1" max="41" step="2" value="15"></label>
+            <label>Depth: <b id="rfrDepthv">5</b><input type="range" id="rfrDepth" min="1" max="8" value="5"></label>
+            <label>Predict y for x = <b id="rfrXv">5.0</b><input type="range" id="rfrX" min="0" max="10" step="0.1" value="5"></label>
+            <button class="seg" id="rfrTrain">Train forest</button>
+            <button class="seg" id="rfrClear">Clear</button>
+            <button class="seg" id="rfrSeed">Example data</button>
+            <div class="readout" id="rfrReadout"></div>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> train with one tree, then raise the tree count and train again. The average becomes less jumpy.</p>
+      </div>
+    </div>
+
+    <div class="lesson" id="t3l12">
+      <div class="card">
+        <h2>Two knobs: tree count and depth</h2>
+        <p>Depth controls how detailed each tree is. Tree count controls how much the forest averages away the quirks of any one tree.</p>
+        <div class="demo-grid">
+          <canvas id="rfrTuneCanvas" width="520" height="420"></canvas>
+          <div class="controls">
+            <h3>Controls</h3>
+            <label>Trees: <b id="rfrTuneTreesv">1</b><input type="range" id="rfrTuneTrees" min="1" max="51" step="2" value="1"></label>
+            <label>Depth: <b id="rfrTuneDepthv">7</b><input type="range" id="rfrTuneDepth" min="1" max="9" value="7"></label>
+            <button class="seg" id="rfrTuneShuffle">New data</button>
+            <div class="readout" id="rfrTuneReadout"></div>
+            <p class="muted">More trees smooth the curve, but a forest still learns from the data it is given.</p>
+          </div>
+        </div>
+        <p class="tryit"><b>🎯 Try this:</b> keep depth high and move from 1 tree to 51. Watch the rough staircase soften.</p>
       </div>
     </div>
   </section>

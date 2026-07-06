@@ -25,7 +25,7 @@ window.ML = (function () {
   const topics = document.querySelectorAll('.topic');
   const navBtns = document.querySelectorAll('.nav-btn');
   const pill = document.getElementById('progressPill');
-  const labels = { home: 'Home', t1: 'Module 1 · Intro to AI', t2: 'Module 2 · KNN', t3: 'Module 3 · Regression', t4: 'Module 4 · K-Means', t5: 'Module 5 · Trees & Forests', t6: 'Module 6 · Neural Networks' };
+  const labels = { home: 'Home', t1: 'Module 1 · Intro to AI', t2: 'Module 2 · Classification', t3: 'Module 3 · Regression Algorithms', t4: 'Module 4 · K-Means', t5: 'Module 5 · Trees & Forests', t6: 'Module 6 · Neural Networks' };
 
   function goTopic(id) {
     topics.forEach(t => t.classList.toggle('active', t.id === id));
@@ -38,6 +38,22 @@ window.ML = (function () {
   // any element with data-go navigates (hero buttons, module cards, brand)
   document.querySelectorAll('[data-go]').forEach(el =>
     el.addEventListener('click', () => goTopic(el.dataset.go)));
+
+  // algorithm-level tabs reveal a smaller lesson tabset inside long modules
+  document.querySelectorAll('.algo-tabs').forEach(bar => {
+    const topic = bar.closest('.topic');
+    bar.querySelectorAll('.algo-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        bar.querySelectorAll('.algo-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        topic.querySelectorAll('.lesson-tabset').forEach(set =>
+          set.classList.toggle('active', set.dataset.algo === tab.dataset.algo));
+        const lessonSet = topic.querySelector(`.lesson-tabset[data-algo="${tab.dataset.algo}"]`);
+        const firstLesson = lessonSet && lessonSet.querySelector('.subtab');
+        if (firstLesson) firstLesson.click();
+      });
+    });
+  });
 
   // sub-tabs within a topic
   document.querySelectorAll('.subtabs').forEach(bar => {

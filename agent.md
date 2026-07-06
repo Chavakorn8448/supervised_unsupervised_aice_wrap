@@ -1,6 +1,6 @@
-# CLAUDE.md
+# agent.md
 
-Guidance for Claude Code (claude.com/claude-code) and AI coding agents working in this repository.
+Guidance for AI coding agents working in this repository. Keep this file synchronized with `CLAUDE.md`.
 
 ## What This Is
 

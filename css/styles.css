@@ -52,6 +52,12 @@ h3{font-size:14px;margin:0 0 10px;color:var(--acc2);text-transform:uppercase;let
 
 /* sub tabs */
 .subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.algo-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 8px}
+.algo-tab{background:#0e1230;border:1px solid var(--line);color:var(--muted);padding:10px 16px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:700;transition:.15s}
+.algo-tab:hover{color:var(--ink);border-color:var(--acc)}
+.algo-tab.active{background:linear-gradient(135deg,var(--acc),#8a6cff);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.subtabs.lesson-tabset{display:none;margin-top:4px}
+.subtabs.lesson-tabset.active{display:flex}
 .subtab{background:var(--panel2);border:1px solid var(--line);color:var(--muted);padding:9px 16px;border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;transition:.15s}
 .subtab:hover{color:var(--ink);border-color:var(--acc)}
 .subtab.active{background:linear-gradient(135deg,var(--acc2),#3ad0c0);color:#06231e;border-color:transparent}

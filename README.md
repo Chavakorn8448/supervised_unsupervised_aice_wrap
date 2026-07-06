@@ -11,8 +11,8 @@ A landing **Home** page plus **6 modules**, each with multiple lessons (sub-tabs
 | # | Module | Lessons (each its own interactive demo) |
 |---|--------|------------------------------------------|
 | 1 | **Intro to AI** | What is AI? (rules-vs-learning + nested AI⊃ML⊃DL rings) · How machines learn (3 families + sorting game) · The ML workflow (5-step pipeline walkthrough) |
-| 2 | **Classification · KNN** | The big idea (drag-to-explore distance demo) · KNN Playground (build data, vote) · Choosing k (live decision-boundary map) |
-| 3 | **Regression** | Best-fit line (drag points) · Why *this* line? (cost meter you minimise by hand) · Gradient descent (watch the line learn, with a live cost curve) |
+| 2 | **Classification Algorithms** | KNN · Logistic Regression · Decision Tree · Random Forest · Naive Bayes, each with big idea, playground, and tuning/boundary demos |
+| 3 | **Regression Algorithms** | Linear Regression · KNN Regressor · Decision Tree Regressor · Random Forest Regressor, each with hands-on prediction and tuning demos |
 | 4 | **Clustering · K-Means** | Step-through playground · How many clusters? (elbow method) · Real-world customer segments |
 | 5 | **Trees & Forests** | Decision tree as a growing diagram · One tree vs. a forest (boundary smoothing) · Grid-search heatmap |
 | 6 | **Neural Networks** | One neuron (weight sliders) · Activation functions explorer · A network that trains itself (+ loss curve) |
@@ -48,8 +48,8 @@ This is a static site with **no framework and no build step**:
 └── js/
     ├── core.js           # navigation, shared canvas helpers, hero animation
     ├── topic1.js         # Intro to AI (flow, rings, sorting game, ML pipeline)
-    ├── topic2.js         # KNN (distance, playground, decision boundary)
-    ├── topic3.js         # Regression (best-fit, cost, gradient descent)
+    ├── topic2.js         # Classification algorithms (KNN, Logistic Regression, Trees, Forests, Naive Bayes)
+    ├── topic3.js         # Regression algorithms (linear, KNN, tree, forest regressors)
     ├── topic4.js         # K-Means (playground, elbow method, segments)
     ├── topic5.js         # Trees (tree diagram, forest, grid search)
     └── topic6.js         # Neural nets (neuron, activations, training + loss)
@@ -59,7 +59,7 @@ This is a static site with **no framework and no build step**:
 
 - **Refresh the page** to reset any demo.
 - Works offline and on a projector; layout is responsive for tablets/phones.
-- All ML (KNN, least-squares fit, K-Means, CART trees, MLP backprop) is implemented from scratch in vanilla JavaScript — no libraries — so it's transparent and editable.
+- All ML (KNN, logistic regression, Naive Bayes, least-squares fit, KNN regression, K-Means, CART trees, forests, MLP backprop) is implemented from scratch in vanilla JavaScript — no libraries — so it's transparent and editable.
 
 ---
 
