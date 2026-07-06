@@ -34,6 +34,12 @@ Navigation works by toggling classes:
 - Topic switches dispatch `topic-shown`.
 - Lesson switches dispatch `lesson-shown`.
 
+Sidebar course grouping is intentional:
+
+- `Supervised Learning`: Modules 1-3.
+- `Unsupervised Learning`: Module 4.
+- `Advanced Supervised`: Modules 5-6.
+
 ## File Map
 
 - `index.html`: markup for Home, six topics, algorithm tabs, lesson tabs, controls, canvases, and script tags.
@@ -43,7 +49,7 @@ Navigation works by toggling classes:
 - `js/topic2.js`: classification algorithms: KNN, logistic regression, decision tree, random forest, and Naive Bayes.
 - `js/topic3.js`: regression algorithms: linear regression, KNN regressor, decision tree regressor, and random forest regressor.
 - `js/topic4.js`: K-Means playground, elbow method, customer segmentation.
-- `js/topic5.js`: trees, forests, and grid search as a more advanced deep dive.
+- `js/topic5.js`: ensembles and model tuning: tree overfitting, forest voting, and grid search as an advanced follow-up to Module 2.
 - `js/topic6.js`: neuron demo, activation functions, small neural network training.
 
 ## Conventions
@@ -73,6 +79,7 @@ Navigation works by toggling classes:
 - For a new algorithm inside Module 2 or Module 3, add an `.algo-tab`, a matching `.lesson-tabset`, and three lessons using the pattern `Big picture`, `Playground`, and a tuning/learning tab.
 - For a new topic-level demo, use a new self-contained block inside the topic IIFE.
 - Match existing control patterns: `.seg` buttons, range inputs with visible value readouts, `.readout` status boxes, and canvases inside `.demo-grid`.
+- Keep Module 5 under Advanced Supervised. It is not an unsupervised module; it is the advanced follow-up for tree/forest overfitting, ensembles, validation, and tuning.
 - If adding a new JavaScript file, add its script tag in `index.html` after `js/core.js`.
 - Keep DOM IDs unique across the full page.
 - Stop timers/intervals when a demo reset button already implies a reset. Avoid runaway intervals.

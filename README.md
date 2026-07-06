@@ -14,7 +14,7 @@ A landing **Home** page plus **6 modules**, each with multiple lessons (sub-tabs
 | 2 | **Classification Algorithms** | KNN · Logistic Regression · Decision Tree · Random Forest · Naive Bayes, each with big idea, playground, and tuning/boundary demos |
 | 3 | **Regression Algorithms** | Linear Regression · KNN Regressor · Decision Tree Regressor · Random Forest Regressor, each with hands-on prediction and tuning demos |
 | 4 | **Clustering · K-Means** | Step-through playground · How many clusters? (elbow method) · Real-world customer segments |
-| 5 | **Trees & Forests** | Decision tree as a growing diagram · One tree vs. a forest (boundary smoothing) · Grid-search heatmap |
+| 5 | **Ensembles & Tuning** | Tree overfitting · Forest voting · Grid-search heatmap for choosing settings |
 | 6 | **Neural Networks** | One neuron (weight sliders) · Activation functions explorer · A network that trains itself (+ loss curve) |
 
 Most lessons include a green **🎯 Try this** challenge. Pedagogy throughout: plain-language hook → play with it → why it matters.
@@ -51,7 +51,7 @@ This is a static site with **no framework and no build step**:
     ├── topic2.js         # Classification algorithms (KNN, Logistic Regression, Trees, Forests, Naive Bayes)
     ├── topic3.js         # Regression algorithms (linear, KNN, tree, forest regressors)
     ├── topic4.js         # K-Means (playground, elbow method, segments)
-    ├── topic5.js         # Trees (tree diagram, forest, grid search)
+    ├── topic5.js         # Ensembles and tuning (tree overfitting, forest voting, grid search)
     └── topic6.js         # Neural nets (neuron, activations, training + loss)
 ```
 

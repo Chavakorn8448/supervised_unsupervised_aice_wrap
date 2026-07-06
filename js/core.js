@@ -25,7 +25,7 @@ window.ML = (function () {
   const topics = document.querySelectorAll('.topic');
   const navBtns = document.querySelectorAll('.nav-btn');
   const pill = document.getElementById('progressPill');
-  const labels = { home: 'Home', t1: 'Module 1 · Intro to AI', t2: 'Module 2 · Classification', t3: 'Module 3 · Regression Algorithms', t4: 'Module 4 · K-Means', t5: 'Module 5 · Trees & Forests', t6: 'Module 6 · Neural Networks' };
+  const labels = { home: 'Home', t1: 'Module 1 · Intro to AI', t2: 'Module 2 · Classification', t3: 'Module 3 · Regression Algorithms', t4: 'Module 4 · K-Means', t5: 'Module 5 · Ensembles & Tuning', t6: 'Module 6 · Neural Networks' };
 
   function goTopic(id) {
     topics.forEach(t => t.classList.toggle('active', t.id === id));

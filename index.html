@@ -28,9 +28,10 @@
     <button class="nav-btn" data-target="t1"><span class="n">1</span> Intro to AI</button>
     <button class="nav-btn" data-target="t2"><span class="n">2</span> Classification Algorithms</button>
     <button class="nav-btn" data-target="t3"><span class="n">3</span> Regression Algorithms</button>
-    <div class="nav-group">Unsupervised &amp; Advanced</div>
+    <div class="nav-group">Unsupervised Learning</div>
     <button class="nav-btn" data-target="t4"><span class="n">4</span> Clustering · K-Means</button>
-    <button class="nav-btn" data-target="t5"><span class="n">5</span> Trees &amp; Forests</button>
+    <div class="nav-group">Advanced Supervised</div>
+    <button class="nav-btn" data-target="t5"><span class="n">5</span> Ensembles &amp; Tuning</button>
     <button class="nav-btn" data-target="t6"><span class="n">6</span> Neural Networks</button>
     <div class="sidebar-foot">
       <p>Every panel is interactive. Click, drag, tweak. Refresh to reset. 🎈</p>
@@ -71,7 +72,7 @@
       <button class="mod-card" data-go="t2"><span class="mod-n">2</span><h3>Classification Algorithms</h3><p>Sort things into categories with neighbors, lines, questions, forests, and probabilities.</p><span class="tag">Supervised</span></button>
       <button class="mod-card" data-go="t3"><span class="mod-n">3</span><h3>Regression Algorithms</h3><p>Predict a number with lines, neighbors, tree steps, and forest averages.</p><span class="tag">Supervised</span></button>
       <button class="mod-card" data-go="t4"><span class="mod-n">4</span><h3>Clustering · K-Means</h3><p>Find hidden groups in data with no labels at all.</p><span class="tag">Unsupervised</span></button>
-      <button class="mod-card" data-go="t5"><span class="mod-n">5</span><h3>Trees &amp; Forests</h3><p>Yes/no questions, a crowd of trees voting, and tuning the knobs.</p><span class="tag">Advanced</span></button>
+      <button class="mod-card" data-go="t5"><span class="mod-n">5</span><h3>Ensembles &amp; Tuning</h3><p>Go deeper on tree overfitting, forest voting, and choosing model settings.</p><span class="tag">Advanced</span></button>
       <button class="mod-card" data-go="t6"><span class="mod-n">6</span><h3>Neural Networks</h3><p>From one tiny neuron to a network that teaches itself.</p><span class="tag">Deep Learning</span></button>
     </div>
 
@@ -888,40 +889,40 @@
 
   <!-- ============================ MODULE 5 ============================ -->
   <section class="topic" id="t5">
-    <div class="topic-head"><h1>5 · Decision Trees, Random Forests &amp; Grid Search</h1>
-      <p class="lead">A decision tree plays "20 questions" with your data. A random forest asks a whole crowd of trees and takes a vote. And grid search is how we tune them to perform their best.</p></div>
+    <div class="topic-head"><h1>5 · Ensembles &amp; Model Tuning</h1>
+      <p class="lead">You met trees and forests in Module 2. Now we go deeper: how trees overfit, why a forest vote is steadier, and how grid search chooses model settings without cheating.</p></div>
     <div class="subtabs" data-topic="t5">
-      <button class="subtab active" data-lesson="t5l1">20 Questions</button>
-      <button class="subtab" data-lesson="t5l2">One tree vs a forest</button>
+      <button class="subtab active" data-lesson="t5l1">Tree overfitting</button>
+      <button class="subtab" data-lesson="t5l2">Forest voting</button>
       <button class="subtab" data-lesson="t5l3">Grid search</button>
     </div>
 
     <div class="lesson active" id="t5l1">
       <div class="card">
-        <h2>A decision tree is just smart yes/no questions</h2>
-        <p>To decide if a fruit is an apple or a lemon, you might ask: "Is it yellow? Is it small?" A decision tree learns the <em>best</em> questions to ask, in the best order. Add depth to let it ask more — and watch the tree grow.</p>
+        <h2>Depth: useful detail or memorized noise?</h2>
+        <p>Module 2 introduced the decision tree classifier: learned if/else questions that end in a class. Here we focus on the main risk: as depth grows, a tree can shift from capturing the real rule to memorizing tiny quirks.</p>
         <div class="demo-grid">
           <canvas id="treeDiagram" width="540" height="380"></canvas>
           <div class="controls">
             <h3>Controls</h3>
             <label>Questions allowed (depth): <b id="tdDepthv">2</b><input type="range" id="tdDepth" min="1" max="4" value="2"></label>
             <div class="readout" id="tdReadout"></div>
-            <p class="muted">Each box is a question about one feature. Follow the branches down to a leaf — that's the tree's answer. More depth = more questions = it can capture finer patterns (but may overthink).</p>
+            <p class="muted">Each box is a learned question. More depth means more questions, more leaves, and more ways to fit detail — including detail that may just be noise.</p>
           </div>
         </div>
       </div>
       <div class="whenbox">
-        <h3 class="wb-title">When would you actually use trees &amp; forests?</h3>
-        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Reach for it when…</b> you want rules you can read, have mixed kinds of data, and the pattern isn't a straight line. Use a <b>forest</b> when accuracy matters most.</div></div>
-        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Watch out when…</b> a single deep tree overfits; a forest fixes that but is harder to interpret.</div></div>
-        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real examples…</b> loan approval, medical triage, fraud and customer-churn prediction.</div></div>
+        <h3 class="wb-title">What changes after Module 2?</h3>
+        <div class="wb-row"><span class="wb-ic">✅</span><div><b>Module 2 taught…</b> what a tree and forest are, and how they classify points.</div></div>
+        <div class="wb-row"><span class="wb-ic">⚠️</span><div><b>Module 5 adds…</b> how to diagnose overfitting, compare one model against an ensemble, and tune hyperparameters.</div></div>
+        <div class="wb-row"><span class="wb-ic">🌍</span><div><b>Real workflow…</b> train several settings, score them on validation data, then keep the model that generalizes best.</div></div>
       </div>
     </div>
 
     <div class="lesson" id="t5l2">
       <div class="card">
-        <h2>Why a forest beats a single tree</h2>
-        <p>One deep tree memorises the data — its decision boundary gets jagged and brittle (<b>overfitting</b>). A <b>random forest</b> grows many trees on slightly different data and averages them. The wisdom of the crowd smooths things out.</p>
+        <h2>Forest voting smooths one-tree mistakes</h2>
+        <p>A single deep tree can produce jagged boxes because every split is based on one version of the data. A forest trains many slightly different trees and averages their votes, so individual mistakes get softened.</p>
         <div class="demo-grid">
           <canvas id="treeCanvas" width="520" height="420"></canvas>
           <div class="controls">
@@ -932,16 +933,16 @@
             <div class="readout" id="treeReadout"></div>
           </div>
         </div>
-        <p class="tryit"><b>🎯 Try this:</b> set 1 tree at depth 8 — see the jagged over-fit boxes. Now drag trees up to 40 and watch the boundary smooth out.</p>
+        <p class="tryit"><b>🎯 Try this:</b> set 1 tree at depth 8 to exaggerate overfitting. Now drag trees up to 40 and watch the vote map smooth out.</p>
       </div>
     </div>
 
     <div class="lesson" id="t5l3">
       <div class="card">
-        <h2>Grid search: finding the best settings</h2>
-        <p>Models have knobs (<em>hyperparameters</em>) like depth and number of trees. Grid search simply <b>tries every combination</b>, scores each, and keeps the winner. Hover a cell to inspect that model; 🏆 is the best.</p>
+        <h2>Grid search: choosing settings without guessing</h2>
+        <p>Depth and tree count are <em>hyperparameters</em>: choices made before training. Grid search tries a small table of combinations, scores each one on validation data, and keeps the winner. Hover a cell to inspect that model; 🏆 is the best.</p>
         <div id="gridSearch"></div>
-        <p class="muted">It's brute force — but reliable, and easy to run on many computers at once. This is how real ML teams squeeze out the last few percent of accuracy.</p>
+        <p class="muted">It is brute force, but reliable. The key idea is not magic search; it is comparing settings fairly on data the model did not train on.</p>
         <p class="tryit" style="background:rgba(108,140,255,.1);border-color:rgba(108,140,255,.4);color:#cdd4ff"><b style="color:var(--acc2)">↪ Remember the validation set?</b> We score each model on a held-out <b>validation</b> slice — <em>not</em> the final test set. If we picked the winner using the test set, we'd be peeking at the answers and cheating all over again. The test set is only opened <em>once</em>, at the very end.</p>
       </div>
     </div>
