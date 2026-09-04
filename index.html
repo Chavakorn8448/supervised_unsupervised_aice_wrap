@@ -971,6 +971,11 @@
             <label>Input x₂: <b id="nx2v">0.3</b><input type="range" id="nx2" min="0" max="1" step="0.05" value="0.3"></label>
             <label>Weight w₂: <b id="nw2v">-0.5</b><input type="range" id="nw2" min="-2" max="2" step="0.1" value="-0.5"></label>
             <label>Bias b: <b id="nbv">0.1</b><input type="range" id="nb" min="-2" max="2" step="0.1" value="0.1"></label>
+            <h3>Step-by-step</h3>
+            <button class="seg" id="nStepBack">◀ Back</button>
+            <button class="seg" id="nStepNext">Next ▶</button>
+            <button class="seg" id="nStepPlay">Play ▶</button>
+            <button class="seg" id="nStepReset">Reset</button>
             <div class="readout" id="neuronReadout"></div>
           </div>
         </div>
@@ -1025,6 +1030,18 @@
           </div>
         </div>
         <p class="tryit"><b>🎯 Try this:</b> pick <b>XOR</b> with just 2 hidden neurons and Train — it struggles. Reset, raise to 12, Train again. Watch the loss curve dive.</p>
+      </div>
+      <div class="card">
+        <h2>Peek inside the network</h2>
+        <p>This is what the network's "brain" looks like as it studies the data. Each circle is a neuron: <b>🟢 green</b> means it's leaning toward "yes", <b>🔴 red</b> means it's leaning toward "no" — the brighter the color, the more sure it is. Each line is a connection: <b>🟢 green</b> pushes the final answer one way, <b>🔴 red</b> pushes it the other way, and thicker lines matter more. The circle on the right is the network's final decision. Under the hood, each neuron turns its inputs into that −1-to-+1 "how sure am I" number using a squashing function called <b>tanh</b> (try it yourself in the Activation tab) — that's the number you'll see written as <code>tanh(z)</code> if you step through an example below.</p>
+        <canvas id="netNeuronCanvas" width="760" height="480"></canvas>
+        <h3>Step through an example</h3>
+        <button class="seg" id="netStepPick">🔍 Step through an example</button>
+        <button class="seg" id="netStepBack">◀ Back</button>
+        <button class="seg" id="netStepNext">Next ▶</button>
+        <button class="seg" id="netStepPlay">Play ▶</button>
+        <button class="seg" id="netStepExit">Exit step mode</button>
+        <div class="readout" id="netStepReadout"></div>
       </div>
     </div>
   </section>
